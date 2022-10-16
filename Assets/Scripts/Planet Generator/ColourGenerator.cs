@@ -7,6 +7,7 @@ public class ColourGenerator
     ColourSettings settings;
     Texture2D texture;
     const int textureResolution = 50;
+    
  
     public void UpdateSettings (ColourSettings settings)
     {
