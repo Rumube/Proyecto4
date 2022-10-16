@@ -32,7 +32,7 @@ public class Controller : MonoBehaviour
     {
         float yaw = _turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
         float pitch = _turnSpeed * Time.deltaTime * -Input.GetAxis("Vertical");
-        float roll = _turnSpeed * Time.deltaTime * Input.GetAxis("Rotate");
+        float roll = _turnSpeed * Time.deltaTime * -Input.GetAxis("Rotate");
         _transform.Rotate(pitch, yaw, roll);
     }
 

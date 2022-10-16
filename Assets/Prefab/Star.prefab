@@ -117,14 +117,7 @@ MonoBehaviour:
   _starType: 0
   _numPlanets: 0
   _planets:
-  - {fileID: 919132149155446097, guid: 997844ac6cff0ba4193f18fa3f75e2da, type: 3}
-  - {fileID: 919132149155446097, guid: ff0eb5608b1381e469e2eb2f6448b462, type: 3}
-  - {fileID: 919132149155446097, guid: e05b3d2606cd01c4ebbae53decea9d5a, type: 3}
-  - {fileID: 919132149155446097, guid: ff464a5096801ac4694e92b2ee56bcf2, type: 3}
-  - {fileID: 919132149155446097, guid: 7a8de410e6f66704282dc9b330400d4f, type: 3}
-  - {fileID: 919132149155446097, guid: 8a90c8a1bdac511469ac28a2bd8fcecd, type: 3}
-  - {fileID: 919132149155446097, guid: 997844ac6cff0ba4193f18fa3f75e2da, type: 3}
-  - {fileID: 919132149155446097, guid: c737360927250fd42a1ca790fad6a541, type: 3}
+  - {fileID: 1612428280033257733, guid: a315bd63ed905d143886a31d3ecd95a2, type: 3}
   _planetPositions:
   - {fileID: 3776716557799072441}
   - {fileID: 7851298331476523227}
