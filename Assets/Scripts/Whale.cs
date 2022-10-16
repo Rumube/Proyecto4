@@ -77,8 +77,8 @@ public class Whale : MonoBehaviour
         for (int i = 0; i < _currentLifePoints; i++)
         {
             _lightsList[i].GetComponent<Renderer>().material = _highStar;
-            newTurnSpeed += 10f;
-            newBoostSpeed += 2f;
+            newTurnSpeed += 20f;
+            newBoostSpeed += 4f;
         }
 
         _controller.SetTurnSpeed(newTurnSpeed);

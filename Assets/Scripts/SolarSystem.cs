@@ -45,7 +45,7 @@ public class SolarSystem : SpaceObject
         {
             int randomIndex = _rng.Next(0, _planets.Count);
             GameObject newPlanet = Instantiate(_planets[randomIndex], transform);
-            newPlanet.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            //newPlanet.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             newPlanet.transform.position = _planetPositions[i].transform.position;
         }
 

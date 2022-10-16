@@ -58,7 +58,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 150
+  far clip plane: 1000
   field of view: 75
   orthographic: 0
   orthographic size: 5
@@ -1085,8 +1085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c01fef111bddbe4782c34c4b4ecac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turnSpeed: 40
-  _boostSpeed: 5
+  _turnSpeed: 80
+  _boostSpeed: 10
 --- !u!114 &1542545641
 MonoBehaviour:
   m_ObjectHideFlags: 0
