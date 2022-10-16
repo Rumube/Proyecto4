@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e790f28bd96754dadf0402b7a669ab, type: 3}
   m_Name: Colour
   m_EditorClassIdentifier: 
-  planetColour: {r: 0.5255597, g: 0.011764685, b: 0.8862745, a: 0}
+  planetMaterial: {fileID: 2100000, guid: 4e27beee5b796f84f8083b3f04ff8478, type: 2}
+  biomeColourSettings:
+    biomes: []
