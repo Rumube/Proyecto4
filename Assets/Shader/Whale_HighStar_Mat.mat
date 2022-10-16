@@ -86,7 +86,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
-    - _SolarFlare: 2.2
+    - _SolarFlare: -0.34
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0

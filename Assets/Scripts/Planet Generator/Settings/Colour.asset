@@ -76,7 +76,7 @@ MonoBehaviour:
         m_Mode: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      tint: {r: 0, g: 0.5332718, b: 1, a: 0}
+      tint: {r: 0, g: 0.5292978, b: 1, a: 0}
       startHeight: 0.431
       tintPercent: 1
     - gradient:
@@ -112,7 +112,7 @@ MonoBehaviour:
       startHeight: 0.772
       tintPercent: 1
     noise:
-      strength: 1
+      strength: 1.88
       numLayers: 1
       baseRoughness: 2
       roughness: 1

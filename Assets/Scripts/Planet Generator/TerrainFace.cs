@@ -24,64 +24,72 @@ public class TerrainFace {
 
     public void ConstructMesh()
     {
-        //Cálculo de los vértices y triángulos del objeto
-        Vector3[] vertices = new Vector3[resolution * resolution];
-        int[] triangles = new int[(resolution - 1) * (resolution - 1) * 6];
-        int triIndex = 0;
-        Vector2[] uv = mesh.uv;
-
-        for (int y = 0; y < resolution; y++)
+        if (mesh != null)
         {
-            for (int x = 0; x < resolution; x++)
+            //Cálculo de los vértices y triángulos del objeto
+            Vector3[] vertices = new Vector3[resolution * resolution];
+            int[] triangles = new int[(resolution - 1) * (resolution - 1) * 6];
+            int triIndex = 0;
+            Vector2[] uv = mesh.uv;
+
+            for (int y = 0; y < resolution; y++)
             {
-                //Creción de la figura que queremos "vertices[i] = figura";
-                int i = x + y * resolution;
-                Vector2 percent = new Vector2(x, y) / (resolution - 1);
-                Vector3 pointOnUnitCube = localUp + (percent.x - .5f) * 2 * axisA + (percent.y - .5f) * 2 * axisB;
-                Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
-                vertices[i] = shapeGenerator.CalculatePointOnPlanet(pointOnUnitSphere);
-
-                if (x != resolution - 1 && y != resolution - 1)
+                for (int x = 0; x < resolution; x++)
                 {
-                    //Primera mitad de los triángulos
-                    triangles[triIndex] = i;
-                    triangles[triIndex + 1] = i + resolution + 1;
-                    triangles[triIndex + 2] = i + resolution;
+                    //Creción de la figura que queremos "vertices[i] = figura";
+                    int i = x + y * resolution;
+                    Vector2 percent = new Vector2(x, y) / (resolution - 1);
+                    Vector3 pointOnUnitCube = localUp + (percent.x - .5f) * 2 * axisA + (percent.y - .5f) * 2 * axisB;
+                    Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
+                    vertices[i] = shapeGenerator.CalculatePointOnPlanet(pointOnUnitSphere);
 
-                    //Segunda mitad de los triángulos
-                    triangles[triIndex + 3] = i;
-                    triangles[triIndex + 4] = i + 1;
-                    triangles[triIndex + 5] = i + resolution + 1;
-                    triIndex += 6;
+                    if (x != resolution - 1 && y != resolution - 1)
+                    {
+                        //Primera mitad de los triángulos
+                        triangles[triIndex] = i;
+                        triangles[triIndex + 1] = i + resolution + 1;
+                        triangles[triIndex + 2] = i + resolution;
+
+                        //Segunda mitad de los triángulos
+                        triangles[triIndex + 3] = i;
+                        triangles[triIndex + 4] = i + 1;
+                        triangles[triIndex + 5] = i + resolution + 1;
+                        triIndex += 6;
 
 
+                    }
                 }
             }
+            mesh.Clear();
+            mesh.vertices = vertices;
+            mesh.triangles = triangles;
+            mesh.RecalculateNormals();
+            mesh.uv = uv;
         }
-        mesh.Clear();
-        mesh.vertices = vertices;
-        mesh.triangles = triangles;
-        mesh.RecalculateNormals();
-        mesh.uv = uv;
+        
     }
 
     public void UpdateUVs(ColourGenerator colourGenerator)
     {
-        Vector2[] uv = new Vector2[resolution * resolution];
-
-        for (int y = 0; y < resolution; y++)
+        if (mesh != null)
         {
-            for (int x = 0; x < resolution; x++)
-            {
-                int i = x + y * resolution;
-                Vector2 percent = new Vector2(x, y) / (resolution - 1);
-                Vector3 pointOnUnitCube = localUp + (percent.x - .5f) * 2 * axisA + (percent.y - .5f) * 2 * axisB;
-                Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
+            Vector2[] uv = new Vector2[resolution * resolution];
 
-                uv[i] = new Vector2(colourGenerator.BiomePercentFromPoint(pointOnUnitSphere), 0);
+            for (int y = 0; y < resolution; y++)
+            {
+                for (int x = 0; x < resolution; x++)
+                {
+                    int i = x + y * resolution;
+                    Vector2 percent = new Vector2(x, y) / (resolution - 1);
+                    Vector3 pointOnUnitCube = localUp + (percent.x - .5f) * 2 * axisA + (percent.y - .5f) * 2 * axisB;
+                    Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
+
+                    uv[i] = new Vector2(colourGenerator.BiomePercentFromPoint(pointOnUnitSphere), 0);
+                }
             }
+            mesh.uv = uv;
         }
-        mesh.uv = uv;
+     
     }
 }
 
