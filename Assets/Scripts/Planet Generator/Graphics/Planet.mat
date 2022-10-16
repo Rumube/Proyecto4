@@ -100,7 +100,7 @@ Material:
     - _CellColor: {r: 1.7176471, g: 0.18039216, b: 0, a: 0}
     - _Color: {r: 0.011764685, g: 0.70157325, b: 0.8862745, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _elevationMinMax: {r: 1, g: 1.0950129, b: 0, a: 0}
+    - _elevationMinMax: {r: 1, g: 1.0975226, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2398337561646014438
 MonoBehaviour:
