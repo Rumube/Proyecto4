@@ -111,7 +111,7 @@ public class GameController : MonoBehaviour
         else
         {
             _gameState = GameState.Zone;
-            Camera.main.GetComponent<CameraController>().SwitchCameraMode(CameraController.CameraMode.Movement);
+            //Camera.main.GetComponent<CameraController>().SwitchCameraMode(CameraController.CameraMode.Movement);
         }
     }
 
@@ -120,7 +120,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             _gameState = GameState.Tetris;
-            Camera.main.GetComponent<CameraController>().SwitchCameraMode(CameraController.CameraMode.Tetris);
+            //Camera.main.GetComponent<CameraController>().SwitchCameraMode(CameraController.CameraMode.Tetris);
             _tetris.StartTetris();
         }
     }

@@ -63,9 +63,9 @@ public class Movement : MonoBehaviour {
 
 	//Handle spawning a new group and check if there is any intersection after spawning
 	private void spawnNew(){
-		actualGroup.GetComponent<Rotation> ().isActive = false; 
+		//actualGroup.GetComponent<Rotation> ().isActive = false; 
 		actualGroup = gameObject.GetComponent<GroupSpawner> ().spawnNext ();
-		actualGroup.GetComponent<Rotation> ().isActive = true;
+		//actualGroup.GetComponent<Rotation> ().isActive = true;
 		if (!gameObject.GetComponent<CubeArray> ().getCubePositionFromScene ()) {
 			// Game over :/
 			Application.LoadLevel (Application.loadedLevelName); 

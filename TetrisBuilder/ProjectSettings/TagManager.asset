@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Casa
   - Trabajo
+  - Cube
+  - Wall
   layers:
   - Default
   - TransparentFX

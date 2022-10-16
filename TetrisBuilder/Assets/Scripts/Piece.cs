@@ -10,6 +10,9 @@ public class Piece : MonoBehaviour
     private Rigidbody _rigidbody;
     private TetrisController _tetrisController;
     private Vector3 _startPosition;
+    float timer = 0f;
+    float quickDropTime = 0.05f;
+    float dropTime = 0.9f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +23,26 @@ public class Piece : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += 1 * Time.deltaTime;
         if (_isFall)
         {
             //MOVEMENT
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                transform.position += Vector3.down;
+                transform.position += Vector3.forward;
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                transform.position += Vector3.back;
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
             {
                 if(transform.position.x > _startPosition.x - 1)
                 {
                     transform.position += Vector3.left;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.D))
             {
                 if (transform.position.x < _startPosition.x + 1)
                 {
@@ -42,13 +50,13 @@ public class Piece : MonoBehaviour
                 }
             }
             //ROTATION
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 int newX = _lastX - 90;
                 _lastX = newX;
                 transform.rotation = Quaternion.Euler(newX, 90, 0);
             }
-            else if (Input.GetKeyDown(KeyCode.D))
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 int newX = _lastX + 90;
                 _lastX = newX;
@@ -61,6 +69,7 @@ public class Piece : MonoBehaviour
                 _nextMove = Time.realtimeSinceStartup + 1f;
                 DownPiece();
             }
+         
         }
 
     }
@@ -68,6 +77,16 @@ public class Piece : MonoBehaviour
     private void DownPiece()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+        /*if (Input.GetKey(KeyCode.LeftShift) && timer>quickDropTime) Intento de hacer que la pieza baje más rápido
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            timer = 0;
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - 1 , transform.position.z);
+        }*/
+
 
     }
 
