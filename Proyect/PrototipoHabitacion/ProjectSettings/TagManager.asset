@@ -7,6 +7,11 @@ TagManager:
   - Wall
   - CanClick
   - ImageElementos
+  - Sword
+  - Shield
+  - Enemy
+  - Enemy
+  - Curandero
   layers:
   - Default
   - TransparentFX
