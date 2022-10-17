@@ -110,5 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89276ce864acb1641887c2b96d5ed3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _proyectil: {fileID: 6516507523290889632, guid: ece1d24b11ab3ce4caf5ccb8095ac89d, type: 3}
+  _proyectilCooldown: 20
   _rangeDetection: 25
-  _hasCivilization: 0
+  _hasCivilization: 1

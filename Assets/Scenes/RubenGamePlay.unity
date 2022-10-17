@@ -271,12 +271,12 @@ MonoBehaviour:
   _ChargeRock: {fileID: 0}
   _seed: 500
   scale: 0.025
-  _range: 100
-  _spawnRate: 0.2
+  _range: 1000
+  _spawnRate: 25
   _lastPos: {x: 0, y: 0, z: 0}
   _chanceChargeRock: 0
   _timeToUpdate: 20
-  _rangeMultiplier: 20
+  _rangeMultiplier: 500
 --- !u!4 &655622582
 Transform:
   m_ObjectHideFlags: 0
