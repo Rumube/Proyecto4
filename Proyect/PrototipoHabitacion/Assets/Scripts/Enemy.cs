@@ -15,14 +15,15 @@ public class Enemy : MonoBehaviour
     {
         if (health<=0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Sword"))
+        if (other.gameObject.CompareTag("Sword"))
         {
             health -= 10;
         }
     }
+   
 }

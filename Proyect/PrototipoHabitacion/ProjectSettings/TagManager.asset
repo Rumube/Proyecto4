@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Enemy
   - Curandero
+  - Door
   layers:
   - Default
   - TransparentFX

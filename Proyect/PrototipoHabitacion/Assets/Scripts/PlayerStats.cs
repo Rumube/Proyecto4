@@ -45,12 +45,13 @@ public class PlayerStats : MonoBehaviour
         }
         if (hasSword == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+
                 anim.SetBool("Attacking", true);
 
             }
-            else if (Input.GetKeyUp(KeyCode.E))
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 anim.SetBool("Attacking", false);
 
@@ -70,7 +71,9 @@ public class PlayerStats : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Shield"))
         {
-            hasShield=true;
+            shield.SetActive(true);
+            shieldOn = true;
+            hasShield =true;
             Destroy(collision.gameObject);
 
         }
@@ -86,9 +89,19 @@ public class PlayerStats : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.CompareTag("Curandero"))
+        else if (collision.gameObject.CompareTag("Curandero"))
         {
             health = maxLife;
         }
+        else if(collision.gameObject.CompareTag("Door"))
+        {
+            StartCoroutine(Door(collision.gameObject));
+        }
+    }
+    IEnumerator Door(GameObject door)
+    {
+        door.SetActive(false);
+         yield return new WaitForSeconds(3f);
+        door.SetActive(true);
     }
 }
