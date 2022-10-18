@@ -25,6 +25,7 @@ public class PlanetSystem : MonoBehaviour
         if( Vector3.Distance(_player.transform.position, transform.position) <= _rangeDetection && _hasCivilization && Time.realtimeSinceStartup >= _nextProyectil)
         {
             _nextProyectil = Time.realtimeSinceStartup + _proyectilCooldown;
+            Instantiate(_proyectil, transform);
             print("Cetus Detectado: " + this.gameObject);
         }
     }

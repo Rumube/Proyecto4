@@ -10,6 +10,8 @@ public class Proyectil : MonoBehaviour
     public float _followVelocity;
     public float _initTime;
 
+    private GameObject _target;
+    private Vector3 _direction;
     private float _finishInitTime;
 
     public enum ProyectilStatus
@@ -24,6 +26,8 @@ public class Proyectil : MonoBehaviour
     {
         _finishInitTime = Time.realtimeSinceStartup + _initTime;
         _proyectilStatus = ProyectilStatus.init;
+        _direction = Random.insideUnitSphere;
+        _target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -48,11 +52,23 @@ public class Proyectil : MonoBehaviour
 
     private void FollowMovement()
     {
-        print("Follow");
+        transform.LookAt(_target.transform);
+        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, _followVelocity);
     }
 
     private void InitMovement()
     {
-        print("Init");
+        transform.position += _direction * _initVelocity * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Trigger: " + other.name);
+        if(other.tag == "Player")
+        {
+            other.GetComponent<Whale>().LightDown();
+            Camera.main.GetComponent<CameraShake>().Shake(0.3f, 10);
+            Destroy(gameObject);
+        }
     }
 }
