@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-   public Animator animator;
+    public Animator animator;
     bool Left;
     //private bool left = Animator.
-        
+
     private Transform _transform;
     private Rigidbody _rb;
 
@@ -15,8 +15,11 @@ public class Controller : MonoBehaviour
     public float _turnSpeed = 60;
     public float _boostSpeed = 5f;
 
-
-
+    //Controls
+    private float _horizontalValue;
+    private float _verticalValue;
+    private float _rotateValue;
+    public bool _impulse;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,7 @@ public class Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
+        InputUpdate();
         Turn();
         MoveUpdate();
         Animation();
@@ -38,16 +42,16 @@ public class Controller : MonoBehaviour
 
     private void Turn()
     {
-        float yaw = _turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
-        float pitch = _turnSpeed * Time.deltaTime * -Input.GetAxis("Vertical");
-        float roll = _turnSpeed * Time.deltaTime * Input.GetAxis("Rotate");
+        float yaw = _turnSpeed * Time.deltaTime * _horizontalValue;
+        float pitch = _turnSpeed * Time.deltaTime * -_verticalValue;
+        float roll = _turnSpeed * Time.deltaTime * _rotateValue;
         _transform.Rotate(pitch, yaw, roll);
     }
 
     private void Animation()
     {
         //A
-        if (Input.GetAxis("Horizontal") < 0)
+        if (_horizontalValue < 0)
         {
             animator.SetBool("Left", true);
         }
@@ -56,7 +60,7 @@ public class Controller : MonoBehaviour
             animator.SetBool("Left", false);
         }
         //D
-        if (Input.GetAxis("Horizontal") > 0) 
+        if (_horizontalValue > 0)
         {
             animator.SetBool("Right", true);
         }
@@ -65,7 +69,7 @@ public class Controller : MonoBehaviour
             animator.SetBool("Right", false);
         }
         //W 
-        if (Input.GetAxis("Vertical") > 0)
+        if (_verticalValue > 0)
         {
             animator.SetBool("Up", true);
         }
@@ -74,7 +78,7 @@ public class Controller : MonoBehaviour
             animator.SetBool("Up", false);
         }
         //S
-        if (Input.GetAxis("Vertical") < 0)
+        if (_verticalValue < 0)
         {
             animator.SetBool("Down", true);
         }
@@ -82,16 +86,31 @@ public class Controller : MonoBehaviour
         {
             animator.SetBool("Down", false);
         }
-
-
-
-
-
     }
 
     private void MoveUpdate()
     {
-        _transform.position += _transform.forward * _boostSpeed * Time.deltaTime;
+        float newBoost = _boostSpeed;
+        if (_impulse)
+        {
+            newBoost *= 5;
+        }
+        _transform.position += _transform.forward * newBoost * Time.deltaTime;
+    }
+
+    private void InputUpdate()
+    {
+        _horizontalValue = Input.GetAxis("Horizontal");
+        _verticalValue = Input.GetAxis("Vertical");
+        _rotateValue = Input.GetAxis("Rotate");
+        if (Input.GetKey(KeyCode.Space))
+        {
+            _impulse = true;
+        }
+        else
+        {
+            _impulse = false;
+        }
     }
 
     //GETTERS

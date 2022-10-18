@@ -71,7 +71,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _CellDensity: 21.87
+    - _CellDensity: 20.5
     - _CellSpeed: 5
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -86,14 +86,14 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
-    - _SolarFlare: -0.34
+    - _SolarFlare: 3.7
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.03644534, g: 0.16781037, b: 0.8584906, a: 1}
-    - _CellColor: {r: 2.2931936, g: 0.0757187, b: 1.6802009, a: 0}
+    - _CellColor: {r: 2.3684022, g: 2.3684022, b: 2.3684022, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

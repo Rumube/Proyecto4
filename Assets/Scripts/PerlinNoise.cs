@@ -135,7 +135,7 @@ public class PerlinNoise : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || NeedUpdate())
+        if (NeedUpdate())
         {
             UpdateSpace();
         }
