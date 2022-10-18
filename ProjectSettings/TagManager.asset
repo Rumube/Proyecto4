@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpaceObject
   - Camera
+  - Space
   layers:
   - Default
   - TransparentFX

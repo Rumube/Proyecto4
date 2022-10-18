@@ -15,6 +15,7 @@ public class SolarSystem : SpaceObject
     [Header("Stats")]
     public StarType _starType;
     public int _numPlanets;
+    public List<GameObject> _StarParticles;
 
     #region References
     [Header("References")]
@@ -66,6 +67,32 @@ public class SolarSystem : SpaceObject
     {
         if(other.tag == "Player")
         {
+            GameObject space = GameObject.FindGameObjectWithTag("Space");
+            GameObject newParticle;
+            switch (_starType)
+            {
+                case StarType.Azul:
+                    newParticle = Instantiate(_StarParticles[0], space.transform);
+                    break;
+                case StarType.Blanco:
+                    newParticle = Instantiate(_StarParticles[1], space.transform);
+                    break;
+                case StarType.Amarillo:
+                    newParticle = Instantiate(_StarParticles[2], space.transform);
+                    break;
+                case StarType.Naranja:
+                    newParticle = Instantiate(_StarParticles[3], space.transform);
+                    break;
+                case StarType.Roja:
+                    newParticle = Instantiate(_StarParticles[4], space.transform);
+                    break;
+                default:
+                    newParticle = Instantiate(_StarParticles[0], space.transform);
+                    break;
+            }
+
+            newParticle.transform.position = transform.position;
+
             Destroy(gameObject);
         }
     }

@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 655622581}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Space
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   _spawnRate: 25
   _lastPos: {x: 0, y: 0, z: 0}
   _chanceChargeRock: 0
-  _timeToUpdate: 20
+  _timeToUpdate: 50000
   _rangeMultiplier: 500
 --- !u!4 &655622582
 Transform:
@@ -348,6 +348,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1983655144, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: field of view
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983655144, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 1983655158, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: m_LocalPosition.y
       value: 19.3
