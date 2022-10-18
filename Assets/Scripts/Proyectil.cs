@@ -53,7 +53,7 @@ public class Proyectil : MonoBehaviour
     private void FollowMovement()
     {
         transform.LookAt(_target.transform);
-        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, _followVelocity);
+        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, _followVelocity * Time.deltaTime);
     }
 
     private void InitMovement()
@@ -67,7 +67,8 @@ public class Proyectil : MonoBehaviour
         if(other.tag == "Player")
         {
             other.GetComponent<Whale>().LightDown();
-            Camera.main.GetComponent<CameraShake>().Shake(0.3f, 10);
+            GameObject camera = GameObject.FindGameObjectWithTag("Camera");
+            camera.GetComponent<CameraShake>().StartShake(0.5f, 1f);
             Destroy(gameObject);
         }
     }

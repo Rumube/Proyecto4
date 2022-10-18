@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpaceObject
+  - Camera
   layers:
   - Default
   - TransparentFX

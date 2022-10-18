@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _proyectil: {fileID: 6516507523290889632, guid: ece1d24b11ab3ce4caf5ccb8095ac89d, type: 3}
-  _proyectilCooldown: 20
-  _rangeDetection: 75
+  _proyectilCooldown: 10
+  _rangeDetection: 100
   _hasCivilization: 1

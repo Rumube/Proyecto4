@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initVelocity: 10
-  _followVelocity: 10
+  _followVelocity: 5
   _initTime: 5
   _proyectilStatus: 0
 --- !u!54 &6385333266443351770
