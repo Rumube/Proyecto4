@@ -13,6 +13,7 @@ public class TetrisController : MonoBehaviour
     public List<GameObject> _piezasCasa;
     public List<GameObject> _piezasTrabajo;
     public GameObject _construcciones;
+    private string tipoConstruc;
     public enum Buildings
     {
         Casa,
@@ -34,14 +35,22 @@ public class TetrisController : MonoBehaviour
     void Update()
     {
     }
-
+    public void UnaCasa()
+    {
+        tipoConstruc = "Casa";
+        StartTetris();
+    }
+    public void UnTrabajo()
+    {
+        tipoConstruc = "Trabajo";
+        StartTetris();
+    }
     public void StartTetris()
     {
-        Toggle toggle = GetSelectedToggle();
+       
         _maxPieces = 4;
-        if (toggle != null)
-        {
-            switch (toggle.name)
+       
+            switch (tipoConstruc)
             {
                 case "Casa":
                     _buildings = Buildings.Casa;
@@ -55,7 +64,7 @@ public class TetrisController : MonoBehaviour
 
                     break;
             }
-        }
+        
 
         _currentBuild.gameObject.transform.position = _gridController._selectedArea.transform.position;
         _startPosition.transform.position = _gridController._selectedArea.transform.position;

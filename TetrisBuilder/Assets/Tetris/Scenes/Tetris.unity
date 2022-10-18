@@ -631,7 +631,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 322118746}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2614,10 +2614,10 @@ RectTransform:
   m_Children:
   - {fileID: 70004172}
   - {fileID: 1742078357}
+  - {fileID: 1433340532}
   - {fileID: 2056376352}
   - {fileID: 2052655681}
   - {fileID: 82890538}
-  - {fileID: 1433340532}
   - {fileID: 2023412196}
   m_Father: {fileID: 1940384531}
   m_RootOrder: 0
@@ -8767,12 +8767,12 @@ GameObject:
   - component: {fileID: 1433340534}
   - component: {fileID: 1433340533}
   m_Layer: 5
-  m_Name: FactoryButton
+  m_Name: WorkButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1433340532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8786,7 +8786,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 322118746}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -8837,13 +8837,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildingPlacer, Assembly-CSharp
-        m_MethodName: BeginNewBuildingPlacement
-        m_Mode: 2
+      - m_Target: {fileID: 1659899790}
+        m_TargetAssemblyTypeName: GridController, Assembly-CSharp
+        m_MethodName: ActiveGridController
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e490ac411f997a54cb25d0e54e7767e7, type: 2}
-          m_ObjectArgumentAssemblyTypeName: BuildingPreset, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2025695252}
+        m_TargetAssemblyTypeName: TetrisController, Assembly-CSharp
+        m_MethodName: UnTrabajo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10490,7 +10502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectedArea: {fileID: 2025695247}
   _gc: {fileID: 745657112}
-  _GridButton: {fileID: 1742078358}
+  _HauseButton: {fileID: 1742078358}
+  _WorkButton: {fileID: 1433340533}
 --- !u!1 &1662700749
 GameObject:
   m_ObjectHideFlags: 0
@@ -10777,6 +10790,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1659899790}
         m_TargetAssemblyTypeName: GridController, Assembly-CSharp
         m_MethodName: ActiveGridController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2025695252}
+        m_TargetAssemblyTypeName: TetrisController, Assembly-CSharp
+        m_MethodName: UnaCasa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11123,7 +11148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 200
-  day: 0
   curPopulation: 0
   curJobs: 0
   curFood: 0
@@ -13607,7 +13631,7 @@ RectTransform:
   m_Children:
   - {fileID: 1853383712}
   m_Father: {fileID: 322118746}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -13829,11 +13853,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 322118746}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 167.2, y: 0}
+  m_AnchoredPosition: {x: 240.8, y: 0}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056376353

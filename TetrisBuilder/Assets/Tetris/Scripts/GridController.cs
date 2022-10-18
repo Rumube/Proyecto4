@@ -8,7 +8,8 @@ public class GridController : MonoBehaviour
     public GameObject _selectedArea;
     public static bool _isActive;
     public GameController _gc;
-    public Button _GridButton;
+    public Button _HauseButton;
+    public Button _WorkButton;
     public static int Contador;
 
     // Start is called before the first frame update
@@ -35,11 +36,13 @@ public class GridController : MonoBehaviour
 
         if (_isActive == true)
         {
-            _GridButton.interactable = false;
+            _HauseButton.interactable = false;
+            _WorkButton.interactable = false;
         }
         if (_isActive == false)
         {
-            _GridButton.interactable = true;
+            _HauseButton.interactable = true;
+            _WorkButton.interactable = true;
         }
 
     }
