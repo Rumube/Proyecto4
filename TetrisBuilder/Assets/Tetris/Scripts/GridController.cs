@@ -48,6 +48,7 @@ public class GridController : MonoBehaviour
     {
         _isActive = !_isActive;
         Contador = Contador + 1;
+        City.day = +1;
         _gc.GetComponent<GameController>().SetBuild(_isActive);
     }
 

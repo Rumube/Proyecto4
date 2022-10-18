@@ -37,6 +37,8 @@ public class BuildingPlacer : MonoBehaviour
         {
             PlaceBuilding();
         }
+
+        
     }
 
     public void BeginNewBuildingPlacement(BuildingPreset buildingPreset)
@@ -57,9 +59,9 @@ public class BuildingPlacer : MonoBehaviour
 
     void PlaceBuilding()
     {
-        GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curPlacementPos, Quaternion.identity);
+        GameObject buildingObj = Instantiate(curBuildingPreset.prefab,new Vector3(curPlacementPos.x, curPlacementPos.y -0.5f, curPlacementPos.z), Quaternion.identity);
         City.inst.OnPlaceBuilding(curBuildingPreset);
-
+        GridController.Contador = +1;
         CancelBuildingPlacement();
     }
 }

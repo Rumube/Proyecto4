@@ -6,7 +6,7 @@ using TMPro;
 public class City : MonoBehaviour
 {
     public int money;
-    public int day;
+    public static int day;
     public int curPopulation;
     public int curJobs;
     public int curFood;
@@ -41,7 +41,7 @@ public class City : MonoBehaviour
     }
     public void EndTurn()
     {
-        day++;
+       
         CalculateMoney();
         CalculatePopulation();
         CalculateJobs();
