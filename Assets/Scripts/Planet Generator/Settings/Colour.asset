@@ -77,7 +77,7 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       tint: {r: 0.43570772, g: 0.11031505, b: 0.6320754, a: 0}
-      startHeight: 0.46
+      startHeight: 0.477
       tintPercent: 1
     noise:
       strength: -1.33
