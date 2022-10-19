@@ -25,7 +25,7 @@ public class LightManager : MonoBehaviour
 
     private void Update()
     {
-        if (hour > 0.988f && hour <= 1f )
+        if (hour > 0.998f && hour <= 1f )
         {
             City.day = City.day + 1;
         }
@@ -36,11 +36,11 @@ public class LightManager : MonoBehaviour
         {
             hour += Time.deltaTime;
             hour %= 24;
-            UpdateLighting(hour / 24);
+            UpdateLighting(hour / 48);
         }
         else
         {
-            UpdateLighting(hour / 24);
+            UpdateLighting(hour / 48);
         }
     }
 

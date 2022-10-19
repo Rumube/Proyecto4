@@ -54,7 +54,7 @@ public class City : MonoBehaviour
 
     void CalculateMoney()
     {
-        money += curJobs * incomePerJob;
+        money = money-10;
 
         foreach(BuildingPreset building in buildings)
             money -= building.costPerTurn;

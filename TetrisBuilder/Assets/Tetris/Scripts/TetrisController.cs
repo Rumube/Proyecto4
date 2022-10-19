@@ -35,16 +35,7 @@ public class TetrisController : MonoBehaviour
     void Update()
     {
     }
-    public void UnaCasa()
-    {
-        tipoConstruc = "Casa";
-        StartTetris();
-    }
-    public void UnTrabajo()
-    {
-        tipoConstruc = "Trabajo";
-        StartTetris();
-    }
+    
     public void StartTetris()
     {
        

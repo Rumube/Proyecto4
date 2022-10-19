@@ -47,6 +47,16 @@ public class GridController : MonoBehaviour
 
     }
 
+    public void UnaCasa()
+    {
+        tipoConstruc = "Casa";
+        StartTetris();
+    }
+    public void UnTrabajo()
+    {
+        tipoConstruc = "Trabajo";
+        StartTetris();
+    }
     public void ActiveGridController()
     {
         _isActive = !_isActive;
