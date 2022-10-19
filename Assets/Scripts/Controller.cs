@@ -14,12 +14,14 @@ public class Controller : MonoBehaviour
     //speed
     public float _turnSpeed = 60;
     public float _boostSpeed = 5f;
+    public float _impulseTime;
 
     //Controls
     private float _horizontalValue;
     private float _verticalValue;
     private float _rotateValue;
     public bool _impulse;
+    private float _stopImpulse;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,9 @@ public class Controller : MonoBehaviour
     }
 
     private void Animation()
-    {
+    {//SPACE
+     
+            
         //A
         if (_horizontalValue < 0)
         {
@@ -93,8 +97,14 @@ public class Controller : MonoBehaviour
         float newBoost = _boostSpeed;
         if (_impulse)
         {
-            newBoost *= 5;
+            newBoost *= 10;
         }
+
+        if(Time.realtimeSinceStartup >= _stopImpulse)
+        {
+            _impulse = false;
+        }
+
         _transform.position += _transform.forward * newBoost * Time.deltaTime;
     }
 
@@ -103,13 +113,16 @@ public class Controller : MonoBehaviour
         _horizontalValue = Input.GetAxis("Horizontal");
         _verticalValue = Input.GetAxis("Vertical");
         _rotateValue = Input.GetAxis("Rotate");
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !_impulse)
         {
             _impulse = true;
+            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
+            animator.SetBool("space", true);
+
         }
         else
         {
-            _impulse = false;
+            animator.SetBool("space", false);
         }
     }
 

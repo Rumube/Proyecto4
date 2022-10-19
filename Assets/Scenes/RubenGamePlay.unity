@@ -348,6 +348,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: _impulseTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1983655144, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: field of view
       value: 75
