@@ -771,6 +771,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 667525597, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2734497139050556981, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -815,6 +819,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4692376651369865596, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 137087661}
     - target: {fileID: 5495171348026691159, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
       propertyPath: m_Name
       value: MAlo
@@ -1145,6 +1153,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4692376651369865596, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 137087661}
     - target: {fileID: 5495171348026691159, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
       propertyPath: m_Name
       value: MAlo
@@ -1347,6 +1359,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4692376651369865596, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 137087661}
     - target: {fileID: 5495171348026691159, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
       propertyPath: m_Name
       value: MAlo (1)
@@ -2712,6 +2728,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4692376651369865596, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 137087661}
     - target: {fileID: 5495171348026691159, guid: 11e23dce081667841951a4ed190e49ce, type: 3}
       propertyPath: m_Name
       value: MAlo
