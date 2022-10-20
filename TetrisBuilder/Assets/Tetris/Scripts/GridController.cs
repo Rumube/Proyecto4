@@ -54,8 +54,8 @@ public class GridController : MonoBehaviour
         Contador = Contador + 1;
         _gc.GetComponent<GameController>().SetBuild(_isActive);
 
-        TetrisController.tipoConstruc = "Casa";
-        Tc.GetComponent<TetrisController>().StartTetris();
+        Tc.tipoConstruc = "Casa";
+       // Tc.GetComponent<TetrisController>().StartTetris();
     }
     public void UnTrabajo()
     {
@@ -63,8 +63,8 @@ public class GridController : MonoBehaviour
         Contador = Contador + 1;
         _gc.GetComponent<GameController>().SetBuild(_isActive);
 
-        TetrisController.tipoConstruc = "Trabajo";
-        Tc.GetComponent<TetrisController>().StartTetris();
+        Tc.tipoConstruc = "Trabajo";
+       // Tc.GetComponent<TetrisController>().StartTetris();
     }
     /*public void ActiveGridController()
     {

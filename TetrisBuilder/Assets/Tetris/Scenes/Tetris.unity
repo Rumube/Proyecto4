@@ -8245,7 +8245,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1659899790}
         m_TargetAssemblyTypeName: GridController, Assembly-CSharp
-        m_MethodName: UnTrabajo
+        m_MethodName: UnaCasa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10104,7 +10104,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1659899790}
         m_TargetAssemblyTypeName: GridController, Assembly-CSharp
-        m_MethodName: UnaCasa
+        m_MethodName: UnTrabajo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12641,6 +12641,8 @@ MonoBehaviour:
   - {fileID: 2986406553327280241, guid: c05fb1ff5b067f544a331e543cf855a9, type: 3}
   - {fileID: 1971022876491676732, guid: 137499b1b8d69884d90c501640208020, type: 3}
   - {fileID: 4924852261840593465, guid: 5b6ae289cb0d9ed4eafabecb206594e2, type: 3}
+  _construcciones: {fileID: 1662700749}
+  tipoConstruc: 
   _buildings: 0
   _startPosition: {fileID: 1632304826}
 --- !u!1 &2029773593

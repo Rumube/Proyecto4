@@ -12,8 +12,8 @@ public class TetrisController : MonoBehaviour
     //public GameObject _buildSelections;
     public List<GameObject> _piezasCasa;
     public List<GameObject> _piezasTrabajo;
-    public static GameObject _construcciones;
-    public static string tipoConstruc;
+    public GameObject _construcciones;
+    public string tipoConstruc;
     public enum Buildings
     {
         Casa,
@@ -35,27 +35,27 @@ public class TetrisController : MonoBehaviour
     void Update()
     {
     }
-    
+
     public void StartTetris()
     {
-       
-        _maxPieces = 4;
-       
-            switch (tipoConstruc)
-            {
-                case "Casa":
-                    _buildings = Buildings.Casa;
-                    GameObject _newCasa = Instantiate(_buildsList[0], _construcciones.transform);
-                    _currentBuild = _newCasa.GetComponent<Casa>();
-                    break;
-                case "Trabajo":
-                    _buildings = Buildings.Trabajo;
-                    GameObject _newTrabajo = Instantiate(_buildsList[1], _construcciones.transform);
-                    _currentBuild = _newTrabajo.GetComponent<Trabajo>();
 
-                    break;
-            }
-        
+        _maxPieces = 4;
+
+        switch (tipoConstruc)
+        {
+            case "Casa":
+                _buildings = Buildings.Casa;
+                GameObject _newCasa = Instantiate(_buildsList[0], _construcciones.transform);
+                _currentBuild = _newCasa.GetComponent<Casa>();
+                break;
+            case "Trabajo":
+                _buildings = Buildings.Trabajo;
+                GameObject _newTrabajo = Instantiate(_buildsList[1], _construcciones.transform);
+                _currentBuild = _newTrabajo.GetComponent<Trabajo>();
+
+                break;
+        }
+
 
         _currentBuild.gameObject.transform.position = _gridController._selectedArea.transform.position;
         _startPosition.transform.position = _gridController._selectedArea.transform.position;

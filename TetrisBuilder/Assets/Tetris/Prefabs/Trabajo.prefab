@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 120278061323065856}
+  - component: {fileID: 7410636581793374305}
   m_Layer: 0
   m_Name: Trabajo
   m_TagString: Trabajo
@@ -31,3 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7410636581793374305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120278061323065887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df112d2445e977f4c893a33f53d12a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxOcupation: 50
+  _currentOcupation: 0
+  _name: 
+  _pieces: []
+  _materialGenerated: 0
