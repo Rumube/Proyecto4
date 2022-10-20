@@ -52,8 +52,15 @@ public class Controller : MonoBehaviour
 
     private void Animation()
     {//SPACE
-     
-            
+        if (Input.GetKey("space"))
+        {
+            animator.SetBool("Space",true);
+        }
+        else
+        {
+            animator.SetBool("Space", false);
+        }
+
         //A
         if (_horizontalValue < 0)
         {
@@ -115,15 +122,13 @@ public class Controller : MonoBehaviour
         _rotateValue = Input.GetAxis("Rotate");
         if (Input.GetKey(KeyCode.Space) && !_impulse)
         {
+            
             _impulse = true;
             _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
-            animator.SetBool("space", true);
+            
 
         }
-        else
-        {
-            animator.SetBool("space", false);
-        }
+       
     }
 
     //GETTERS
