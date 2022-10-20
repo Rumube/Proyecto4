@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 5460133908487518284}
   - component: {fileID: 4202707446704670633}
   - component: {fileID: 8136592095637554800}
+  - component: {fileID: 6711047601632946499}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: Untagged
@@ -144,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801876535422947316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2100002, y: 3.72, z: -10.66}
+  m_LocalPosition: {x: -1.21, y: 4.86, z: -10.66}
   m_LocalScale: {x: 1.131024, y: 1.131024, z: 1.131024}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,6 +202,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &6711047601632946499
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801876535422947316}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 689a48bbb23f8884d8b166386b0371db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1193189113019576306
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +233,7 @@ GameObject:
   - component: {fileID: 1022879657953457234}
   - component: {fileID: 2516452122887210320}
   - component: {fileID: 1228967676404463903}
+  - component: {fileID: 2270156108095592305}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -227,7 +249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193189113019576306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.83, y: 5.64, z: -10.66}
+  m_LocalPosition: {x: 3.83, y: 6.78, z: -10.66}
   m_LocalScale: {x: 0.77019, y: 0.77019, z: 0.77019}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -284,6 +306,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2270156108095592305
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193189113019576306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a826d5cad96442b4fb4e1688c2889d65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3461497811266104742
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +337,7 @@ GameObject:
   - component: {fileID: 2081796604321985358}
   - component: {fileID: 4925223722960474510}
   - component: {fileID: 6680693300112225261}
+  - component: {fileID: 4569980616772239197}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -310,7 +353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3461497811266104742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.85, y: 3, z: -9.88}
+  m_LocalPosition: {x: 3.85, y: 4.1400003, z: -9.88}
   m_LocalScale: {x: 0.687746, y: 0.687746, z: 0.687746}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -367,6 +410,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4569980616772239197
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461497811266104742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5a0bcf7bc6b8ec46825ad5dae42c268, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4202545500886923198
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +441,7 @@ GameObject:
   - component: {fileID: 1908100453748598919}
   - component: {fileID: 771354832367637586}
   - component: {fileID: 4069955343350488213}
+  - component: {fileID: 1328087911241941745}
   m_Layer: 0
   m_Name: Sphere (5)
   m_TagString: Untagged
@@ -393,7 +457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4202545500886923198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 3, z: -9.88}
+  m_LocalPosition: {x: -0.08, y: 4.1400003, z: -9.88}
   m_LocalScale: {x: 0.687746, y: 0.687746, z: 0.687746}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -450,6 +514,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &1328087911241941745
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202545500886923198}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4578426022821502893
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +545,7 @@ GameObject:
   - component: {fileID: 1997368153619539052}
   - component: {fileID: 5609693123801403602}
   - component: {fileID: 172308501638097616}
+  - component: {fileID: 8662890138169797938}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -476,7 +561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4578426022821502893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.100000024, y: 5.64, z: -10.66}
+  m_LocalPosition: {x: -0.1, y: 6.78, z: -10.66}
   m_LocalScale: {x: 0.77019, y: 0.77019, z: 0.77019}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -533,6 +618,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8662890138169797938
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578426022821502893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b34f01d4eedbba4cbb55b0f5323f312, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7323866544863614308
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +649,7 @@ GameObject:
   - component: {fileID: 3015330199945243378}
   - component: {fileID: 6886361702457960903}
   - component: {fileID: 2198896569038558080}
+  - component: {fileID: 5757676753214091900}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -559,7 +665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7323866544863614308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.23, y: 3.72, z: -10.66}
+  m_LocalPosition: {x: 5.23, y: 5.05, z: -10.66}
   m_LocalScale: {x: 1.131024, y: 1.131024, z: 1.131024}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -616,6 +722,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5757676753214091900
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323866544863614308}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5f0bf9b082eecf45bd31f7c960e1dee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7531133433781035563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1214,8 @@ MonoBehaviour:
   animator: {fileID: 258753577}
   _turnSpeed: 40
   _boostSpeed: 5
+  _impulseTime: 0
+  _impulse: 0
 --- !u!114 &1542545641
 MonoBehaviour:
   m_ObjectHideFlags: 0
