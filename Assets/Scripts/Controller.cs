@@ -55,6 +55,22 @@ public class Controller : MonoBehaviour
         _horizontalValue = Input.GetAxis("Horizontal");
         _verticalValue = Input.GetAxis("Vertical");
         _rotateValue = Input.GetAxis("Rotate");
+        if (Input.GetKey(KeyCode.Space) && !_impulse)
+        {
+            
+            _impulse = true;
+            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
+            
+
+        }
+       
+    }
+
+    private void InputUpdate()
+    {
+        _horizontalValue = Input.GetAxis("Horizontal");
+        _verticalValue = Input.GetAxis("Vertical");
+        _rotateValue = Input.GetAxis("Rotate");
         if (Input.GetKey(KeyCode.Space) && !_impulse && Time.realtimeSinceStartup >= _nextImpulse)
         {
             _impulse = true;
@@ -77,8 +93,15 @@ public class Controller : MonoBehaviour
 
     private void Animation()
     {//SPACE
-     
-            
+        if (Input.GetKey("space"))
+        {
+            animator.SetBool("Space",true);
+        }
+        else
+        {
+            animator.SetBool("Space", false);
+        }
+
         //A
         if (_horizontalValue < 0)
         {
