@@ -93,15 +93,7 @@ public class PlayerStats : MonoBehaviour
         {
             health = maxLife;
         }
-        else if(collision.gameObject.CompareTag("Door"))
-        {
-            StartCoroutine(Door(collision.gameObject));
-        }
+      
     }
-    IEnumerator Door(GameObject door)
-    {
-        door.SetActive(false);
-         yield return new WaitForSeconds(3f);
-        door.SetActive(true);
-    }
+    
 }
