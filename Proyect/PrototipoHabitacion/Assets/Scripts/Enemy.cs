@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
       //  Vector3 target = (0f, player.transform.position, 0f);
-        transform.LookAt(player.transform);
+       // transform.LookAt(player.transform);
        // transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
         healthBar.fillAmount = health / maxLife;
         if (health<=0)
