@@ -15,6 +15,7 @@ public class Controller : MonoBehaviour
     public float _turnSpeed = 60;
     public float _boostSpeed = 5f;
     public float _impulseTime;
+    public float _impulseCooldown;
 
     //Controls
     private float _horizontalValue;
@@ -22,6 +23,7 @@ public class Controller : MonoBehaviour
     private float _rotateValue;
     public bool _impulse;
     private float _stopImpulse;
+    private float _nextImpulse = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +38,49 @@ public class Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+    }
+
+    private void Update()
+    {
         InputUpdate();
         Turn();
         MoveUpdate();
         Animation();
+    }
+
+
+    private void InputUpdate()
+    {
+        _horizontalValue = Input.GetAxis("Horizontal");
+        _verticalValue = Input.GetAxis("Vertical");
+        _rotateValue = Input.GetAxis("Rotate");
+        if (Input.GetKey(KeyCode.Space) && !_impulse)
+        {
+            
+            _impulse = true;
+            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
+            
+
+        }
+       
+    }
+
+    private void InputUpdate()
+    {
+        _horizontalValue = Input.GetAxis("Horizontal");
+        _verticalValue = Input.GetAxis("Vertical");
+        _rotateValue = Input.GetAxis("Rotate");
+        if (Input.GetKey(KeyCode.Space) && !_impulse && Time.realtimeSinceStartup >= _nextImpulse)
+        {
+            _impulse = true;
+            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
+            animator.SetBool("space", true);
+        }
+        else
+        {
+            animator.SetBool("space", false);
+        }
     }
 
     private void Turn()
@@ -52,8 +93,15 @@ public class Controller : MonoBehaviour
 
     private void Animation()
     {//SPACE
-     
-            
+        if (Input.GetKey("space"))
+        {
+            animator.SetBool("Space",true);
+        }
+        else
+        {
+            animator.SetBool("Space", false);
+        }
+
         //A
         if (_horizontalValue < 0)
         {
@@ -100,30 +148,13 @@ public class Controller : MonoBehaviour
             newBoost *= 10;
         }
 
-        if(Time.realtimeSinceStartup >= _stopImpulse)
+        if(Time.realtimeSinceStartup >= _stopImpulse && _impulse)
         {
             _impulse = false;
+            _nextImpulse = Time.realtimeSinceStartup + _impulseCooldown;
         }
 
         _transform.position += _transform.forward * newBoost * Time.deltaTime;
-    }
-
-    private void InputUpdate()
-    {
-        _horizontalValue = Input.GetAxis("Horizontal");
-        _verticalValue = Input.GetAxis("Vertical");
-        _rotateValue = Input.GetAxis("Rotate");
-        if (Input.GetKey(KeyCode.Space) && !_impulse)
-        {
-            _impulse = true;
-            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
-            animator.SetBool("space", true);
-
-        }
-        else
-        {
-            animator.SetBool("space", false);
-        }
     }
 
     //GETTERS

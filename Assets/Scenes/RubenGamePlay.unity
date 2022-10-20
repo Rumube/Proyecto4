@@ -349,8 +349,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: _mat
+      value: 
+      objectReference: {fileID: 2100000, guid: e911c7fefc17f694a9b62a77e5ff496f, type: 2}
+    - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: _matNormal
+      value: 
+      objectReference: {fileID: 2100000, guid: 335516859e8f678419d29441dc1c38d2, type: 2}
+    - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: _matImpulse
+      value: 
+      objectReference: {fileID: 2100000, guid: e911c7fefc17f694a9b62a77e5ff496f, type: 2}
+    - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: _impulseTime
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: _impulseCooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1983655144, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: field of view
