@@ -9,11 +9,11 @@ public class TetrisController : MonoBehaviour
     public GameController _gameController;
 
     public GridController _gridController;
-    public GameObject _buildSelections;
+    //public GameObject _buildSelections;
     public List<GameObject> _piezasCasa;
     public List<GameObject> _piezasTrabajo;
-    public GameObject _construcciones;
-    private string tipoConstruc;
+    public static GameObject _construcciones;
+    public static string tipoConstruc;
     public enum Buildings
     {
         Casa,
@@ -63,13 +63,13 @@ public class TetrisController : MonoBehaviour
         CreatePiece();
     }
 
-    private Toggle GetSelectedToggle()
+    /*private Toggle GetSelectedToggle()
     {
         Toggle[] toggles = _buildSelections.GetComponentsInChildren<Toggle>();
         foreach (var t in toggles)
             if (t.isOn) return t;  //returns selected toggle
         return null;           // if nothing is selected return null
-    }
+    }*/
 
     public void CreatePiece()
     {
@@ -97,15 +97,19 @@ public class TetrisController : MonoBehaviour
         }
         else
         {
-            _gridController.ActiveGridController();
+            //_gridController.ActiveGridController();
             switch (_buildings)
             {
+
                 case Buildings.Casa:
-                    _currentBuild.SetOcupation(4);
-                    _gameController.CalculatePopulation();
+                    _gridController.UnaCasa();//Construccion de una casa
+
+                    //_currentBuild.SetOcupation(4);
+                    //_gameController.CalculatePopulation();
                     _currentBuild.GetComponent<Casa>().SpawnCitizens();
                     break;
                 case Buildings.Trabajo:
+                    _gridController.UnTrabajo();//Construcción de un espacio de trabajo
                     _gameController.AddWorkPlaces(20);
                     break;
             }

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 120278061323065856}
-  - component: {fileID: 1419854321694294155}
   m_Layer: 0
   m_Name: Casa
   m_TagString: Casa
@@ -32,27 +31,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1419854321694294155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120278061323065887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0c907e741b52a4f9ad98746006aebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxOcupation: 4
-  _currentOcupation: 0
-  _name: Casa
-  _pieces: []
-  _citizenList:
-  - {fileID: 3801928427582162071, guid: 0a2d3539940aaf24884eb31c9e019abe, type: 3}
-  - {fileID: 6634358142870751174, guid: be0c20f7ffc9e9548b7393f455cc91a2, type: 3}
-  - {fileID: 6470068896759874071, guid: 53e60f9b4286a314b9820fc7dcbec14d, type: 3}
-  - {fileID: 1198521042570052880, guid: 2e50efd782222eb48adeed3f5d9230db, type: 3}
-  - {fileID: 2550169054866141755, guid: e98e114902102194daa803090a52218e, type: 3}
-  - {fileID: 6019847755140532158, guid: 8309eb2d02a885c40ba9a12eb9f57acd, type: 3}
-  - {fileID: 4742847900938644936, guid: d5efeabdaa5e9234fba2b8ef7f1b17d7, type: 3}

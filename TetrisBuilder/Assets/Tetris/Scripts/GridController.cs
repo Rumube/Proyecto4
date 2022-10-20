@@ -11,6 +11,7 @@ public class GridController : MonoBehaviour
     public Button _HauseButton;
     public Button _WorkButton;
     public static int Contador;
+    public TetrisController Tc;
 
     // Start is called before the first frame update
     void Start()
@@ -49,20 +50,28 @@ public class GridController : MonoBehaviour
 
     public void UnaCasa()
     {
-        tipoConstruc = "Casa";
-        StartTetris();
+        _isActive = !_isActive;
+        Contador = Contador + 1;
+        _gc.GetComponent<GameController>().SetBuild(_isActive);
+
+        TetrisController.tipoConstruc = "Casa";
+        Tc.GetComponent<TetrisController>().StartTetris();
     }
     public void UnTrabajo()
     {
-        tipoConstruc = "Trabajo";
-        StartTetris();
+        _isActive = !_isActive;
+        Contador = Contador + 1;
+        _gc.GetComponent<GameController>().SetBuild(_isActive);
+
+        TetrisController.tipoConstruc = "Trabajo";
+        Tc.GetComponent<TetrisController>().StartTetris();
     }
-    public void ActiveGridController()
+    /*public void ActiveGridController()
     {
         _isActive = !_isActive;
         Contador = Contador + 1;
         _gc.GetComponent<GameController>().SetBuild(_isActive);
     }
-
+    */
 
 }
