@@ -66,23 +66,6 @@ public class Controller : MonoBehaviour
        
     }
 
-    private void InputUpdate()
-    {
-        _horizontalValue = Input.GetAxis("Horizontal");
-        _verticalValue = Input.GetAxis("Vertical");
-        _rotateValue = Input.GetAxis("Rotate");
-        if (Input.GetKey(KeyCode.Space) && !_impulse && Time.realtimeSinceStartup >= _nextImpulse)
-        {
-            _impulse = true;
-            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
-            animator.SetBool("space", true);
-        }
-        else
-        {
-            animator.SetBool("space", false);
-        }
-    }
-
     private void Turn()
     {
         float yaw = _turnSpeed * Time.deltaTime * _horizontalValue;
