@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedMove: 20
-  _speedRotation: 1
-  _rotationX: 0
+  _speedRotation: 20
+  _rotationX: 3
   _rotationY: 1
   _rotationZ: 0
 --- !u!54 &79195690

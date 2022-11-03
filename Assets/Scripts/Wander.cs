@@ -48,7 +48,7 @@ public class Wander : MonoBehaviour
             }
             else
             {
-                transform.Rotate(-_randomVector * (_speedRotation + 100) * Time.deltaTime);
+                transform.Rotate(-_randomVector * (_speedRotation +_speedMove) * Time.deltaTime);
                 transform.position += (transform.forward * _speedMove * Time.deltaTime);
             }
             
