@@ -62,7 +62,7 @@ public class Controller : MonoBehaviour
             _stopImpulse = Time.realtimeSinceStartup + _impulseTime;   
         }
         if (Input.GetKey(KeyCode.LeftShift)) {
-            
+            ActiveSonar();
         }
     }
 
@@ -121,6 +121,11 @@ public class Controller : MonoBehaviour
         {
             animator.SetBool("Down", false);
         }
+    }
+
+    private void ActiveSonar()
+    {
+        GetComponent<SonarController>().StartSonar();
     }
 
     private void MoveUpdate()
