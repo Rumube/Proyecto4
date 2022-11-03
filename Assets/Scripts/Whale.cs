@@ -15,13 +15,13 @@ public class Whale : MonoBehaviour
     public Material _highStar;
     public Material _lowStar;
     public List<GameObject> _lightsList = new List<GameObject>();
-    private Controller _controller;
+    private PlayerController _controller;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        _controller = GetComponent<Controller>();
+        _controller = GetComponent<PlayerController>();
         RestartLife();
     }
 

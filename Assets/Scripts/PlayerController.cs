@@ -2,44 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public Animator animator;
-    bool Left;
-    //private bool left = Animator.
-
-    private Transform _transform;
+    private Animator _animator;
     private Rigidbody _rb;
 
-    //speed
-    public float _turnSpeed = 60;
-    public float _boostSpeed = 5f;
-    public float _impulseTime;
-    public float _impulseCooldown;
+    [Header("Speed")]
+    [SerializeField]
+    private float _turnSpeed = 60;
+    [SerializeField]
+    private float _boostSpeed = 5f;
+    [SerializeField]
+    private float _impulseTime;
+    [SerializeField]
+    private float _impulseCooldown;
 
     //Controls
     private float _horizontalValue;
     private float _verticalValue;
     private float _rotateValue;
     private bool _impulse;
-    private bool _sonar;
     private float _stopImpulse;
-    private float _nextImpulse = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        animator = gameObject.GetComponent<Animator>();
-
-        _rb = GetComponent<Rigidbody>();
-        _rb.useGravity = false;
-        _transform = GetComponent<Transform>();
-        Left = false;
-    }
-
-    private void FixedUpdate()
-    {
-
+        _animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody>();       
     }
 
     private void Update()
@@ -71,56 +59,16 @@ public class Controller : MonoBehaviour
         float yaw = _turnSpeed * Time.deltaTime * _horizontalValue;
         float pitch = _turnSpeed * Time.deltaTime * -_verticalValue;
         float roll = _turnSpeed * Time.deltaTime * _rotateValue;
-        _transform.Rotate(pitch, yaw, roll);
+        transform.Rotate(pitch, yaw, roll);
     }
 
     private void Animation()
-    {//SPACE
-        if (Input.GetKey("space"))
-        {
-            animator.SetBool("Space",true);
-        }
-        else
-        {
-            animator.SetBool("Space", false);
-        }
-
-        //A
-        if (_horizontalValue < 0)
-        {
-            animator.SetBool("Left", true);
-        }
-        else
-        {
-            animator.SetBool("Left", false);
-        }
-        //D
-        if (_horizontalValue > 0)
-        {
-            animator.SetBool("Right", true);
-        }
-        else
-        {
-            animator.SetBool("Right", false);
-        }
-        //W 
-        if (_verticalValue > 0)
-        {
-            animator.SetBool("Up", true);
-        }
-        else
-        {
-            animator.SetBool("Up", false);
-        }
-        //S
-        if (_verticalValue < 0)
-        {
-            animator.SetBool("Down", true);
-        }
-        else
-        {
-            animator.SetBool("Down", false);
-        }
+    {
+        _animator.SetBool("Space", Input.GetKey("space"));
+        _animator.SetBool("Left", _horizontalValue < 0 ? true: false);
+        _animator.SetBool("Right", _horizontalValue > 0 ? true : false);
+        _animator.SetBool("Up", _verticalValue > 0 ? true : false);
+        _animator.SetBool("Down", _verticalValue < 0 ? true : false);
     }
 
     private void ActiveSonar()
@@ -139,10 +87,10 @@ public class Controller : MonoBehaviour
         if(Time.realtimeSinceStartup >= _stopImpulse && _impulse)
         {
             _impulse = false;
-            _nextImpulse = Time.realtimeSinceStartup + _impulseCooldown;
+            //_nextImpulse = Time.realtimeSinceStartup + _impulseCooldown;
         }
 
-        _transform.position += _transform.forward * newBoost * Time.deltaTime;
+        transform.position += transform.forward * newBoost * Time.deltaTime;
     }
 
     //GETTERS
