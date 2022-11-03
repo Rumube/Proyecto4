@@ -21,7 +21,8 @@ public class Controller : MonoBehaviour
     private float _horizontalValue;
     private float _verticalValue;
     private float _rotateValue;
-    public bool _impulse;
+    private bool _impulse;
+    private bool _sonar;
     private float _stopImpulse;
     private float _nextImpulse = 0;
 
@@ -57,13 +58,12 @@ public class Controller : MonoBehaviour
         _rotateValue = Input.GetAxis("Rotate");
         if (Input.GetKey(KeyCode.Space) && !_impulse)
         {
-            
             _impulse = true;
-            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
-            
-
+            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;   
         }
-       
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            
+        }
     }
 
     private void Turn()
