@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _impulseCooldown;
 
+    [Header("MaxValues")]
+    [SerializeField]
+    private float _maxTurnSpeed = 100;
+
     //Controls
     private float _horizontalValue;
     private float _verticalValue;
@@ -106,7 +110,7 @@ public class PlayerController : MonoBehaviour
     //SETTERS
     public void SetTurnSpeed(float newValue)
     {
-        _turnSpeed = newValue;
+        _turnSpeed = Mathf.Min(newValue, _maxTurnSpeed);
     }
     public void SetboostSpeed(float newValue)
     {
