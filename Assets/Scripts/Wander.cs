@@ -14,6 +14,8 @@ public class Wander : MonoBehaviour
     public int _rotationX;
     public int _rotationY;
     public int _rotationZ;
+
+    public float _spinTime;//tiempo que tarda en volver a girar
     // Start is called before the first frame update
     void Start()
     {
@@ -41,20 +43,37 @@ public class Wander : MonoBehaviour
         }
         else
         {
-           
+            transform.position += (transform.forward * _speedMove * Time.deltaTime);
             if (_randomVector==Vector3.zero)
             {
-                transform.position += (transform.forward * -_speedMove * Time.deltaTime);
+                transform.Rotate  (new Vector3 (_rotationX,_rotationY,_rotationZ) * _speedMove * Time.deltaTime);
             }
             else
             {
                 transform.Rotate(-_randomVector * (_speedRotation +_speedMove) * Time.deltaTime);
-                transform.position += (transform.forward * _speedMove * Time.deltaTime);
+                
             }
             
         }
         
       
+    }
+    void FixedUpdate()
+    {
+        //RaycastHit hit;
+
+        //if (Physics.Raycast(transform.position, Vector3.forward, out hit, 100.0f))
+        //{
+        //    print("Found an object - distance: " + hit.distance);
+        //    _wander = false;
+        //     Debug.DrawRay(transform.position, Vector3.forward, Color.green, 100f);
+        //}
+        //else
+        //{
+        //    _wander = true;
+        //}
+           
+       
     }
     void Spin()
     {
@@ -62,14 +81,18 @@ public class Wander : MonoBehaviour
     }
     IEnumerator SpinTime()
     { 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(_spinTime);
         _spin = true;
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        _wander = false;
     }
     private void OnCollisionStay(Collision collision)
     {
         _wander = false;
-        
+
 
     }
     private void OnCollisionExit(Collision collision)
