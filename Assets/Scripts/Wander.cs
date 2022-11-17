@@ -88,12 +88,13 @@ public class Wander : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         _wander = false;
+        Debug.Log("collision");
     }
     private void OnCollisionStay(Collision collision)
     {
         _wander = false;
 
-
+        Debug.Log("collision");
     }
     private void OnCollisionExit(Collision collision)
     {
