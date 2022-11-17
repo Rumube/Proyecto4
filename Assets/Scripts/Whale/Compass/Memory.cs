@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Proyectil : MonoBehaviour
+public class Memory : MonoBehaviour
 {
     //Parameters
     [Header("Parameters")]
     public float _followVelocity;
 
-    private GameObject _target;
+    private Vector3 _target;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _target = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
@@ -25,8 +25,8 @@ public class Proyectil : MonoBehaviour
 
     private void FollowMovement()
     {
-        transform.LookAt(_target.transform);
-        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, _followVelocity * Time.deltaTime);
+        //transform.LookAt(_target.transform);
+        transform.position = Vector3.MoveTowards(transform.position, _target, _followVelocity * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,4 +40,15 @@ public class Proyectil : MonoBehaviour
         //    Destroy(gameObject);
         //}
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("Choque");
+    }
+
+    public void SetTarge(Vector3 basePosition)
+    {
+        _target = basePosition;
+    }
+
 }

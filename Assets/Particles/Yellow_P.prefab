@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4258619375448995803}
   - component: {fileID: 4258619375448995800}
   - component: {fileID: 4258619375448995801}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4824,7 +4824,9 @@ GameObject:
   - component: {fileID: 4472114113922304002}
   - component: {fileID: 4632918077146423990}
   - component: {fileID: 7622472711036168904}
-  m_Layer: 0
+  - component: {fileID: -7806804386989367148}
+  - component: {fileID: 788660246134325089}
+  m_Layer: 3
   m_Name: Yellow_P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4956,3 +4958,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &-7806804386989367148
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613029390718879351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &788660246134325089
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613029390718879351}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
