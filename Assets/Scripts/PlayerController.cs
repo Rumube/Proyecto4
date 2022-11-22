@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _impulseCooldown;
 
+    [Header("Cameras")]
+    [SerializeField]
+    private GameObject _dashCamera;
+
     [Header("MaxValues")]
     [SerializeField]
     private float _maxTurnSpeed = 100;
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private float _rotateValue;
     private bool _impulse;
     private float _stopImpulse;
+    private float _nextImpulse;
 
     private void Awake()
     {
@@ -48,10 +53,11 @@ public class PlayerController : MonoBehaviour
         _horizontalValue = Input.GetAxis("Horizontal");
         _verticalValue = Input.GetAxis("Vertical");
         _rotateValue = Input.GetAxis("Rotate");
-        if (Input.GetKey(KeyCode.Space) && !_impulse)
+        if (Input.GetKey(KeyCode.Space) && !_impulse && Time.realtimeSinceStartup > _nextImpulse)
         {
             _impulse = true;
-            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;   
+            _stopImpulse = Time.realtimeSinceStartup + _impulseTime;
+            _dashCamera.SetActive(true);
         }
         if (Input.GetKey(KeyCode.LeftShift)) {
             ActiveSonar();
@@ -91,7 +97,8 @@ public class PlayerController : MonoBehaviour
         if(Time.realtimeSinceStartup >= _stopImpulse && _impulse)
         {
             _impulse = false;
-            //_nextImpulse = Time.realtimeSinceStartup + _impulseCooldown;
+            _nextImpulse = Time.realtimeSinceStartup + _impulseCooldown;
+            _dashCamera.SetActive(false);
         }
 
         transform.position += transform.forward * newBoost * Time.deltaTime;
