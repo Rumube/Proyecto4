@@ -58,7 +58,6 @@ public class Memory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Enter: " + other.name);
         if(_memoryState != MemoryState.followTail)
         {
             _memoryState = MemoryState.followNexo;
@@ -68,7 +67,6 @@ public class Memory : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        print("Exit");
         if (_memoryState != MemoryState.followTail)
         {
             _memoryState = MemoryState.followWhave;
@@ -99,6 +97,9 @@ public class Memory : MonoBehaviour
         UpdateCollision();
     }
 
+    /// <summary>
+    /// Update the collisions and detect the memory position
+    /// </summary>
     private void UpdateCollision()
     {
         _collider.enabled = false;

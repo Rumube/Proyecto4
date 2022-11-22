@@ -65,7 +65,7 @@ public class Controller : MonoBehaviour
             _impulse = true;
             _stopImpulse = Time.realtimeSinceStartup + _impulseTime;   
         }
-        if (Input.GetKey(KeyCode.LeftShift)) {//Active Compass
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {//Active Compass
             _compass.ChangeMemoryStates();
         }
     }
