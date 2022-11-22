@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    [Header("References")]
     public Animator animator;
+    public Compass _compass;
+    private Transform _transform;
+    private Rigidbody _rb;
+
     bool Left;
     //private bool left = Animator.
 
-    private Transform _transform;
-    private Rigidbody _rb;
+
 
     //speed
     public float _turnSpeed = 60;
@@ -61,8 +65,8 @@ public class Controller : MonoBehaviour
             _impulse = true;
             _stopImpulse = Time.realtimeSinceStartup + _impulseTime;   
         }
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            ActiveSonar();
+        if (Input.GetKey(KeyCode.LeftShift)) {//Active Compass
+            _compass.ChangeMemoryStates();
         }
     }
 
@@ -121,11 +125,6 @@ public class Controller : MonoBehaviour
         {
             animator.SetBool("Down", false);
         }
-    }
-
-    private void ActiveSonar()
-    {
-        GetComponent<SonarController>().StartSonar();
     }
 
     private void MoveUpdate()

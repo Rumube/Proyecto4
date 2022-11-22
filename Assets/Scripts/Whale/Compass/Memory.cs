@@ -7,14 +7,25 @@ public class Memory : MonoBehaviour
     //Parameters
     [Header("Parameters")]
     public float _followVelocity;
-
     private Vector3 _target;
+    private GameObject _whale;
+    private SphereCollider _collider;
 
+    public enum MemoryState
+    {
+        followNexo,
+        followWhave,
+        followTail
+    }
+
+    public MemoryState _memoryState;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _whale = GameObject.FindGameObjectWithTag("Player");
+        _collider = GetComponent<SphereCollider>();
+        _collider.enabled = true;
     }
 
     // Update is called once per frame
@@ -23,32 +34,75 @@ public class Memory : MonoBehaviour
         FollowMovement();
     }
 
+    /// <summary>
+    /// Moves the memory in the correct direction
+    /// </summary>
     private void FollowMovement()
     {
-        //transform.LookAt(_target.transform);
-        transform.position = Vector3.MoveTowards(transform.position, _target, _followVelocity * Time.deltaTime);
+        switch (_memoryState)
+        {
+            case MemoryState.followNexo:
+                transform.position = Vector3.MoveTowards(transform.position, _target, _followVelocity * Time.deltaTime);
+                break;
+            case MemoryState.followWhave:
+                transform.position = Vector3.MoveTowards(transform.position, _whale.transform.position, _followVelocity * Time.deltaTime);
+                break;
+            case MemoryState.followTail:
+                transform.position = Vector3.MoveTowards(transform.position, _whale.transform.position, _followVelocity * Time.deltaTime);
+                break;
+            default:
+                break;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //print("Trigger: " + other.name);
-        //if(other.tag == "Player")
-        //{
-        //    other.GetComponent<Whale>().LightDown();
-        //    GameObject camera = GameObject.FindGameObjectWithTag("Camera");
-        //    camera.GetComponent<CameraShake>().StartShake(0.5f, 1f);
-        //    Destroy(gameObject);
-        //}
+        print("Enter: " + other.name);
+        if(_memoryState != MemoryState.followTail)
+        {
+            _memoryState = MemoryState.followNexo;
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
-        print("Choque");
+        print("Exit");
+        if (_memoryState != MemoryState.followTail)
+        {
+            _memoryState = MemoryState.followWhave;
+        }
     }
 
+    /// <summary>
+    /// Set the base's position
+    /// </summary>
+    /// <param name="basePosition"></param>
     public void SetTarge(Vector3 basePosition)
     {
         _target = basePosition;
+    }
+
+    public void ChangeMemoryState(bool value)
+    {
+
+    }
+
+    /// <summary>
+    /// Set the momery state
+    /// </summary>
+    /// <param name="newState"></param>
+    public void SetMemoryState(MemoryState newState)
+    {
+        _memoryState = newState;
+        UpdateCollision();
+    }
+
+    private void UpdateCollision()
+    {
+        _collider.enabled = false;
+        _collider.enabled = true;
     }
 
 }
