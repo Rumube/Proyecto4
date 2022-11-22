@@ -8,7 +8,7 @@ public class Wander : MonoBehaviour
     public float _speedRotation;
     Vector3 _randomVector;
     bool _spin=true;
-    bool _wander=true;
+    public bool _wander=true;
 
 
     public int _rotationX;
@@ -100,4 +100,18 @@ public class Wander : MonoBehaviour
     {
         _wander = true;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+
+        _wander = false;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+       _wander = false;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+       _wander = true;
+    }
+
 }

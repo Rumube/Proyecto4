@@ -18,7 +18,13 @@ public class BankBehaviour : MonoBehaviour
 
 
     private IEnumerator coroutine;
+    // Start is called before the first frame update
+    public Wander wander;
+   
 
+ 
+   
+    
     void Start()
     {
         luciernaga = GetComponent<Rigidbody>();
@@ -52,7 +58,15 @@ public class BankBehaviour : MonoBehaviour
                 StartCoroutine(coroutine);
             }
         }
-
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position, transform.forward);
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Target"))
+            {
+                //Do the thing
+            }
+        }
     }
    
     private IEnumerator Movimiento(float waitTime)
@@ -80,5 +94,18 @@ public class BankBehaviour : MonoBehaviour
     void Update()
     {
         transform.LookAt(target);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("cp");
+        wander._wander = false;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        wander._wander = false;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        wander._wander = true;
     }
 }
