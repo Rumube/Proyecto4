@@ -9,7 +9,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Speed")]
     [SerializeField]
-    private float _turnSpeed = 60;
+    private float _speed = 60;
+    [SerializeField]
+    private float _turnYawSpeed = 10;
+    [SerializeField]
+    private float _turnPitchSpeed = 60;
+    [SerializeField]
+    private float _turnRollSpeed = 20;
     [SerializeField]
     private float _boostSpeed = 5f;
     [SerializeField]
@@ -23,7 +29,17 @@ public class PlayerController : MonoBehaviour
 
     [Header("MaxValues")]
     [SerializeField]
-    private float _maxTurnSpeed = 100;
+    private float _maxYawSpeed = 60;
+    [SerializeField]
+    private float _maxPitchSpeed = 100;
+    [SerializeField]
+    private float _maxRollSpeed = 70;
+
+    [Header("RotationPoints")]
+    [SerializeField]
+    private Transform rightPoint;
+    [SerializeField]
+    private Transform leftPoint;
 
     //Controls
     private float _horizontalValue;
@@ -66,10 +82,12 @@ public class PlayerController : MonoBehaviour
 
     private void Turn()
     {
-        float yaw = _turnSpeed * Time.deltaTime * _horizontalValue;
-        float pitch = _turnSpeed * Time.deltaTime * -_verticalValue;
-        float roll = _turnSpeed * Time.deltaTime * _rotateValue;
-        transform.Rotate(pitch, yaw, roll);
+        float yaw = _turnYawSpeed * Time.deltaTime * _horizontalValue;
+        float pitch = _turnPitchSpeed * Time.deltaTime * -_verticalValue;
+        float roll = _turnRollSpeed * Time.deltaTime * _rotateValue;
+
+        transform.RotateAround(yaw > 0 ? rightPoint.position:leftPoint.position, Vector3.up, yaw);
+        transform.Rotate(pitch, 0,roll);
     }
 
     private void Animation()
@@ -85,7 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<SonarController>().StartSonar();
     }
-
+   
     private void MoveUpdate()
     {
         float newBoost = _boostSpeed;
@@ -94,21 +112,20 @@ public class PlayerController : MonoBehaviour
             newBoost *= 10;
         }
 
-        if(Time.realtimeSinceStartup >= _stopImpulse && _impulse)
+        if (Time.realtimeSinceStartup >= _stopImpulse && _impulse)
         {
             _impulse = false;
             _nextImpulse = Time.realtimeSinceStartup + _impulseCooldown;
             _dashCamera.SetActive(false);
         }
-
         transform.position += transform.forward * newBoost * Time.deltaTime;
-    }
+    }   
 
     //GETTERS
-    public float GetTurnSpeed()
-    {
-        return _turnSpeed;
-    }
+    //public float GetTurnSpeed()
+    //{
+    //    return _turnSpeed;
+    //}
     public float GetBoostSpeed()
     {
         return _boostSpeed;
@@ -117,7 +134,9 @@ public class PlayerController : MonoBehaviour
     //SETTERS
     public void SetTurnSpeed(float newValue)
     {
-        _turnSpeed = Mathf.Min(newValue, _maxTurnSpeed);
+        _maxYawSpeed = Mathf.Min(newValue, _maxYawSpeed);
+        _maxPitchSpeed = Mathf.Min(newValue, _maxPitchSpeed);
+        _maxRollSpeed = Mathf.Min(newValue, _maxRollSpeed);
     }
     public void SetboostSpeed(float newValue)
     {
