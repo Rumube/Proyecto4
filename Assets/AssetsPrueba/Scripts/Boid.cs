@@ -42,7 +42,8 @@ public class Boid : MonoBehaviour {
         forward = cachedTransform.forward;
 
         float startSpeed = (settings.minSpeed + settings.maxSpeed) / 2;
-        velocity = transform.forward * startSpeed;
+        Vector3 random =new Vector3 (Random.Range(0f, 2f), Random.Range(0f, 2f), Random.Range(0f, 2f));
+        velocity = random* startSpeed;
     }
 
     public void SetColour (Color col) {
@@ -51,7 +52,7 @@ public class Boid : MonoBehaviour {
         }
     }
 
-    public void UpdateBoid () {
+    public void UpdateBoid (Transform Spawner) {
         Vector3 acceleration = Vector3.zero;
 
         if (target != null) {
@@ -78,17 +79,35 @@ public class Boid : MonoBehaviour {
             Vector3 collisionAvoidForce = SteerTowards (collisionAvoidDir) * settings.avoidCollisionWeight;
             acceleration += collisionAvoidForce;
         }
+        //if (Vector3.Distance(Spawner.position, transform.position)>50)
+        //{
+        //    velocity += acceleration * Time.deltaTime;
+        //    float speed = velocity.magnitude;
+        //    speed = Mathf.Clamp(speed, settings.minSpeed, settings.maxSpeed);
+        //    velocity = -forward * speed;
+        //    Vector3 collisionAvoidDir = ObstacleRays();
+        //    Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * settings.avoidCollisionWeight;
+        //    acceleration += collisionAvoidForce;
 
-        velocity += acceleration * Time.deltaTime;
-        float speed = velocity.magnitude;
-        Vector3 dir = velocity / speed;
-        speed = Mathf.Clamp (speed, settings.minSpeed, settings.maxSpeed);
-        velocity = dir * speed;
+        //    cachedTransform.position += velocity * Time.deltaTime;
+        //    cachedTransform.forward = -forward;
+        //    position = cachedTransform.position;
+        //    forward = -forward;
+        //}
+        //else
+        //{
+            velocity += acceleration * Time.deltaTime;
+            float speed = velocity.magnitude;
+            Vector3 dir = velocity / speed;
+            speed = Mathf.Clamp(speed, settings.minSpeed, settings.maxSpeed);
+            velocity = dir * speed;
 
-        cachedTransform.position += velocity * Time.deltaTime;
-        cachedTransform.forward = dir;
-        position = cachedTransform.position;
-        forward = dir;
+            cachedTransform.position += velocity * Time.deltaTime;
+            cachedTransform.forward = dir;
+            position = cachedTransform.position;
+            forward = dir;
+        //}
+      
     }
 
     bool IsHeadingForCollision () {
@@ -98,21 +117,28 @@ public class Boid : MonoBehaviour {
         } else { }
         return false;
     }
-
+    /// <summary>
+    /// Detects if there is a obstacle
+    /// </summary>
+    /// <returns>If  detects an obstacle returns an alternative direction if not keep moving forward</returns>
     Vector3 ObstacleRays () {
         Vector3[] rayDirections = BoidHelper.directions;
 
         for (int i = 0; i < rayDirections.Length; i++) {
-            Vector3 dir = cachedTransform.TransformDirection (rayDirections[i]);
+            Vector3 dir = cachedTransform.TransformDirection (rayDirections[i]);//catches the direction of the rays
             Ray ray = new Ray (position, dir);
-            if (!Physics.SphereCast (ray, settings.boundsRadius, settings.collisionAvoidDst, settings.obstacleMask)) {
+            if (!Physics.SphereCast (ray, settings.boundsRadius, settings.collisionAvoidDst, settings.obstacleMask)) {//
                 return dir;
             }
         }
 
         return forward;
     }
-
+    /// <summary>
+    /// directs the boid to the indicated direction 
+    /// </summary>
+    /// <param name="vector"> the direction </param>
+    /// <returns></returns>
     Vector3 SteerTowards (Vector3 vector) {
         Vector3 v = vector.normalized * settings.maxSpeed - velocity;
         return Vector3.ClampMagnitude (v, settings.maxSteerForce);

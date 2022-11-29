@@ -48,7 +48,7 @@ public class BoidManager : MonoBehaviour {
                 boids[i].avgAvoidanceHeading = boidData[i].avoidanceHeading;
                 boids[i].numPerceivedFlockmates = boidData[i].numFlockmates;
 
-                boids[i].UpdateBoid ();
+                boids[i].UpdateBoid (transform);
             }
 
             boidBuffer.Release ();
