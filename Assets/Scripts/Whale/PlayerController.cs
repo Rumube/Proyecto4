@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _rb = GetComponent<Rigidbody>();        
+        _rb = GetComponent<Rigidbody>();
     }
     private void Start()
     {
@@ -91,19 +91,19 @@ public class PlayerController : MonoBehaviour
         float pitch = _turnPitchSpeed * Time.deltaTime * -_verticalValue;
         float roll = _turnRollSpeed * Time.deltaTime * _rotateValue;
 
-        transform.RotateAround(yaw < 0 ? rightPoint.position:leftPoint.position, Vector3.up, yaw);
-        transform.Rotate(pitch, 0,roll);
+        transform.RotateAround(yaw < 0 ? rightPoint.position : leftPoint.position, Vector3.up, yaw);
+        transform.Rotate(pitch, 0, roll);
     }
 
     private void Animation()
     {
         _animator.SetBool("Space", Input.GetKey("space"));
-        _animator.SetBool("Left", _horizontalValue < 0 ? true: false);
+        _animator.SetBool("Left", _horizontalValue < 0 ? true : false);
         _animator.SetBool("Right", _horizontalValue > 0 ? true : false);
         _animator.SetBool("Up", _verticalValue > 0 ? true : false);
         _animator.SetBool("Down", _verticalValue < 0 ? true : false);
     }
-   
+
     private void MoveUpdate()
     {
         float newBoost = _boostSpeed;
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
             _dashCamera.SetActive(false);
         }
         transform.position += transform.forward * newBoost * Time.deltaTime;
-    }   
+    }
 
     //GETTERS
     //public float GetTurnSpeed()
