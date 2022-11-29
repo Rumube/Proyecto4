@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Cris.unity
+    guid: 42d3011a3d6cd024496383e8f553a3ae
   m_configObjects: {}

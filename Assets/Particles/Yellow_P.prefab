@@ -4862,6 +4862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followVelocity: 50
+  _memoryState: 0
 --- !u!82 &7622472711036168904
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4966,7 +4967,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8613029390718879351}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.1
