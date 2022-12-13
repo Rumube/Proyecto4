@@ -33,7 +33,11 @@ public class Boid : MonoBehaviour {
         material = transform.GetComponentInChildren<MeshRenderer> ().material;
         cachedTransform = transform;
     }
-
+    /// <summary>
+    /// Gets initial position of the boid
+    /// </summary>
+    /// <param name="settings"></param>
+    /// <param name="target"></param>
     public void Initialize (BoidSettings settings, Transform target) {
         this.target = target;
         this.settings = settings;
@@ -42,7 +46,7 @@ public class Boid : MonoBehaviour {
         forward = cachedTransform.forward;
 
         float startSpeed = (settings.minSpeed + settings.maxSpeed) / 2;
-        Vector3 random =new Vector3 (Random.Range(0f, 2f), Random.Range(0f, 2f), Random.Range(0f, 2f));
+        Vector3 random =new Vector3 (Random.Range(-1f, 2f), Random.Range(-1f, 2f), Random.Range(-1f, 2f));
         velocity = random* startSpeed;
     }
 
