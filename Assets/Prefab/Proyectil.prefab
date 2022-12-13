@@ -211,10 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1197f111ce592444ca56d5fa483d5528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initVelocity: 10
   _followVelocity: 5
-  _initTime: 5
-  _proyectilStatus: 0
 --- !u!54 &6385333266443351770
 Rigidbody:
   m_ObjectHideFlags: 0

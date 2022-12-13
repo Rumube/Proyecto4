@@ -238,6 +238,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &593612232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8000762951143467705, guid: c163e81827e817947af185f2c8676423, type: 3}
+  m_PrefabInstance: {fileID: 8531037688676580764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beddb98be31f98c43baf0af898d95d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &655622580
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +364,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: e911c7fefc17f694a9b62a77e5ff496f, type: 2}
     - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: _compass
+      value: 
+      objectReference: {fileID: 593612232}
+    - target: {fileID: 1542545637, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: _matNormal
       value: 
       objectReference: {fileID: 2100000, guid: 335516859e8f678419d29441dc1c38d2, type: 2}
@@ -368,6 +383,10 @@ PrefabInstance:
       propertyPath: _impulseCooldown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1542545641, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: _memoryParticle
+      value: 
+      objectReference: {fileID: 3099120374714183570, guid: f0a41bf8a9bb6544d894a28419f44d84, type: 3}
     - target: {fileID: 1983655144, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: field of view
       value: 75
@@ -411,6 +430,10 @@ PrefabInstance:
     - target: {fileID: 1983655159, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: m_TagString
       value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 474491093841392359, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3599642125822172545, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: m_RootOrder
@@ -459,6 +482,14 @@ PrefabInstance:
     - target: {fileID: 4233295540866631483, guid: c163e81827e817947af185f2c8676423, type: 3}
       propertyPath: m_Name
       value: Whale Animated
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683139803963360613, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683139803963360613, guid: c163e81827e817947af185f2c8676423, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c163e81827e817947af185f2c8676423, type: 3}
