@@ -1407,7 +1407,7 @@ PrefabInstance:
     - target: {fileID: 3559297176007848096, guid: 4cde6ba5a87074e8a973d577574f33c1, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 2931604500597588581, guid: a68eabc10bd1b4dcaa03efa0e2052ddb, type: 3}
+      objectReference: {fileID: 2931604500597588581, guid: d761eeb78f42a944e885e5c5b537a966, type: 3}
     - target: {fileID: 3559297176007848096, guid: 4cde6ba5a87074e8a973d577574f33c1, type: 3}
       propertyPath: colours
       value: 
@@ -3997,7 +3997,7 @@ GameObject:
   - component: {fileID: 964720854}
   - component: {fileID: 964720853}
   - component: {fileID: 964720852}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5215,8 +5215,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253094065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -180.5, y: 0, z: 0}
-  m_LocalScale: {x: 5.85, y: 5.85, z: 5.85}
+  m_LocalPosition: {x: -180.5, y: -156.3, z: 0}
+  m_LocalScale: {x: 24.613422, y: 24.613422, z: 24.613422}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1488956148}
