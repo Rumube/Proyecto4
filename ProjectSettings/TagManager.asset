@@ -8,6 +8,7 @@ TagManager:
   - Camera
   - Space
   - Target
+  - WormHole
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,6 @@ TagManager:
   - UI
   - obstacleMask
   - Player
-  - 
   - 
   - 
   - 
