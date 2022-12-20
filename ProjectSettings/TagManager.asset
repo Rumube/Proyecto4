@@ -9,6 +9,7 @@ TagManager:
   - Space
   - Target
   - WormHole
+  - FreeLook
   layers:
   - Default
   - TransparentFX
