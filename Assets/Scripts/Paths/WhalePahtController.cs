@@ -19,7 +19,7 @@ public class WhalePahtController : MonoBehaviour
     void Update()
     {
         _distanceTravelled += _speed * Time.deltaTime;
-        transform.position = _pathcreator.path.GetPointAtDistance(_distanceTravelled);
-        transform.rotation = _pathcreator.path.GetRotationAtDistance(_distanceTravelled);
+        transform.position = _pathcreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
+        transform.rotation = _pathcreator.path.GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
     }
 }
