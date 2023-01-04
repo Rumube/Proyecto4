@@ -5,9 +5,15 @@ using PathCreation;
 
 public class WhalePahtController : MonoBehaviour
 {
+    [Header("Status")]
+    private bool _isPath = false;
+    private bool _direction = true;
+
+    [Header("Travel values")]
     public PathCreator _pathcreator;
-    public float _speed = 150;
+    public float _speed = 1;
     float _distanceTravelled;
+    public const float MINSPEED = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +24,17 @@ public class WhalePahtController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _distanceTravelled += _speed * Time.deltaTime;
-        transform.position = _pathcreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
-        transform.rotation = _pathcreator.path.GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
+        if(Input.GetKeyUp(KeyCode.C)) {
+            _isPath = !_isPath;
+            _distanceTravelled = _pathcreator.path.GetClosestDistanceAlongPath(transform.position);
+        }
+
+        if (_isPath)
+        {
+            float playerVel = Input.GetAxis("Vertical");
+            _distanceTravelled += (playerVel * _speed) + (MINSPEED * Time.deltaTime);
+            transform.position = _pathcreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
+            transform.rotation = _pathcreator.path.GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
+        }
     }
 }
