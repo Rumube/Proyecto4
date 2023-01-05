@@ -3,20 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - SpaceObject
-  - Camera
-  - Space
-  - Target
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Compass
+  - Player
   - Water
   - UI
-  - obstacleMask
-  - Player
+  - 
   - 
   - 
   - 
